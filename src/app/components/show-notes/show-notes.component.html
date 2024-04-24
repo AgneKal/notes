@@ -1,0 +1,11 @@
+<div class="card mt-2">
+    <div class="card-header">Išsaugotos žinutės</div>
+    <div class="card-body">
+        <div class="row align-items-center  justify-content-center">
+            <div class="card p-2 border-primary text-primary col-3 mt-3 mx-2 d-flex align-items-center" *ngFor="let note of notes; let i=index">
+                <div class="col">{{ note.message }}</div>
+                <button class="btn btn-danger btn-sm mt-2" (click)="deleteNote(i)">Ištrinti</button>
+            </div>
+        </div>
+    </div>
+</div>

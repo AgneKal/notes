@@ -1,0 +1,7 @@
+<div class="card mt-2">
+    <div class="card-header">Įrašykite žinutę</div>
+    <div class="card-body">
+        <input type="text" class="form-control mb-3" [(ngModel)]="message">
+        <button class="btn btn-success btn-sm" (click)="addNote()" [disabled]="message == null">Išsaugoti</button>
+    </div>
+</div>

@@ -2,7 +2,6 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { NoteBoardService } from '../../services/note-board.service';
-import { Note } from '../../models/note';
 
 @Component({
   selector: 'app-write-note',
@@ -14,7 +13,7 @@ import { Note } from '../../models/note';
 export class WriteNoteComponent {
   public message: string|null = null;
 
-  public notes: Note[];
+  public notes: string[] =[];
 
 
   public constructor(private noteBoardService:NoteBoardService) {
@@ -23,9 +22,7 @@ export class WriteNoteComponent {
 
   public addNote() {
     if (this.message != null){
-      this.noteBoardService.addNote({
-        message: this.message
-      })
+      this.noteBoardService.addNote(this.message)
     }
     this.message = null;
   }

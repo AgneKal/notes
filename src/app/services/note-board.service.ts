@@ -1,11 +1,10 @@
 import { Injectable } from '@angular/core';
-import { Note } from '../models/note';
 
 @Injectable({
   providedIn: 'root'
 })
 export class NoteBoardService {
-  public notes: Note[]=[];
+  public notes: string[]=[];
 
   constructor() { 
     let s = localStorage.getItem('notes');
@@ -18,7 +17,7 @@ export class NoteBoardService {
     localStorage.setItem('notes', JSON.stringify(this.notes))
   }
 
-  public addNote(note: Note){
+  public addNote(note: string){
     this.notes.push(note);
     this.save();
   }

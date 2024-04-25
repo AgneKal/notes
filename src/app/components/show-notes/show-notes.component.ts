@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { NoteBoardService } from '../../services/note-board.service';
-import { Note } from '../../models/note';
 
 @Component({
   selector: 'app-show-notes',
@@ -11,7 +10,7 @@ import { Note } from '../../models/note';
   styleUrl: './show-notes.component.css'
 })
 export class ShowNotesComponent {
-  public notes: Note[];
+  public notes: string[];
 
   public constructor (private noteBorderService: NoteBoardService) {
     this.notes = noteBorderService.notes;
